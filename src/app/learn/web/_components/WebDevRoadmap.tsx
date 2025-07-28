@@ -12,7 +12,7 @@ import { ChevronRight } from "lucide-react";
 import { Gallery } from "react-photoswipe-gallery";
 import ImageZoom from "@/components/ImageZoom";
 
-import Syllabus0to100 from "@/assets/resources/web/0-1 syllabus.png";
+import Syllabus0to100 from "@/assets/resources/web/syllabus.svg";
 import { webDevRoadmapData } from "@/data/resources/web";
 
 export default function WebDevRoadmap() {
@@ -22,7 +22,7 @@ export default function WebDevRoadmap() {
         {webDevRoadmapData.map((category, idx) => (
           <AccordionItem key={idx} value={category.category}>
             <AccordionTrigger>
-              <h2 className="text-lg font-semibold text-purple-200 md:text-xl">
+              <h2 className="text-lg font-semibold text-white md:text-xl">
                 {category.category}
               </h2>
             </AccordionTrigger>
@@ -34,11 +34,11 @@ export default function WebDevRoadmap() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: itemIdx * 0.1 }}
-                    className="flex items-start space-x-3 rounded-lg bg-purple-800/30 p-3"
+                    className="flex items-start space-x-3 rounded-lg bg-[#0047AB]/30 p-3"
                   >
-                    <ChevronRight className="mt-1 h-5 w-5 flex-shrink-0 text-purple-400" />
+                    <ChevronRight className="mt-1 h-5 w-5 flex-shrink-0 text-white-400" />
                     <div>
-                      <h3 className="font-semibold text-purple-200">
+                      <h3 className="font-semibold text-white-200">
                         {item.title}
                       </h3>
                       <p className="text-sm text-gray-400">
@@ -53,9 +53,9 @@ export default function WebDevRoadmap() {
         ))}
       </Accordion>
 
-      <Card className="bg-purple-800/50">
+      <Card className="bg-black/5">
         <CardContent className="p-4">
-          <p className="text-center font-mono text-sm text-purple-200">
+          <p className="w-full text-center font-mono text-sm text-white-200">
             Note: Check out Harkirat Singh&apos;s courses for a comprehensive
             learning experience from beginner to advanced topics.
           </p>
@@ -68,8 +68,9 @@ export default function WebDevRoadmap() {
             <ImageZoom
               src={Syllabus0to100}
               alt="Full Stack Development Roadmap"
-              className="w-full cursor-pointer object-cover transition-all duration-300"
+              className="w-full cursor-pointer object-cover transition-all duration-300 zoom-image"
             />
+
           </div>
         </Gallery>
         <p className="mt-2 text-center text-sm text-gray-400">
@@ -83,7 +84,7 @@ export default function WebDevRoadmap() {
         className="mt-4 space-y-4 text-center"
       >
         <Button
-          className="bg-purple-600 text-white transition-all duration-300 hover:bg-purple-700"
+          className="bg-[#0047AB] text-white transition-all duration-300 hover:bg-[#003399]"
           size="lg"
           onClick={() =>
             window.open(

@@ -16,14 +16,14 @@ const quicksand = Quicksand({
   fallback: ['Arial', 'sans-serif']
 });
 
-import { Pixelify_Sans } from 'next/font/google';
+// import { Pixelify_Sans } from 'next/font/google';
 
-const pixelifySans = Pixelify_Sans({
-  weight: ['400', '500', '600', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  fallback: ['Arial', 'sans-serif']
-});
+// const pixelifySans = Pixelify_Sans({
+//   weight: ['400', '500', '600', '700'],
+//   subsets: ['latin'],
+//   display: 'swap',
+//   fallback: ['Arial', 'sans-serif']
+// });
 
 
 export const metadata: Metadata = {

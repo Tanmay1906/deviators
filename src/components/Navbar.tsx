@@ -49,8 +49,8 @@ export default function Navigation() {
                       : "text-white/90 hover:bg-black/10 hover:text-white"
                     } flex items-center space-x-2 hover:scale-105`}
                 >
-                  <item.icon className="h-5 w-5 text-white group-hover:text-[#0047AB] transition-colors duration-200" />
-                  <span className="group-hover:text-[#0047AB] transition-colors duration-200">{item.name}</span>
+                  <item.icon className="h-5 w-5 text-white group-hover:text-[#99c3ff] transition-colors duration-200" />
+                  <span className="group-hover:text-[#99c3ff] transition-colors duration-200">{item.name}</span>
                 </Link>
 
 
