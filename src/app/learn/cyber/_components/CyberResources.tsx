@@ -14,30 +14,30 @@ export default function CyberResources() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: idx * 0.1 }}
-          className="rounded-lg bg-purple-800/30 p-4"
+          className="rounded-lg bg-[#0047AB]/30 p-4"
         >
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-lg font-semibold text-purple-200 underline">
+              <h3 className="text-xl font-semibold text-white">
                 {resource.title}
               </h3>
-              <p className="text-purple-400">{resource.type}</p>
+              <p className="text-grey-400">{resource.type}</p>
             </div>
             <Link
               href={resource.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 text-purple-400 hover:text-purple-300"
+              className="flex items-center space-x-2 text-white hover:text-white"
             >
               <span>Visit</span>
               <ExternalLink className="h-5 w-5" />
             </Link>
           </div>
           {resource.overview && (
-            <p className="mt-2 text-purple-300">{resource.overview}</p>
+            <p className="mt-2 text-white">{resource.overview}</p>
           )}
           {resource.features && (
-            <ul className="mt-2 list-disc space-y-1 pl-4 text-purple-300">
+            <ul className="mt-2 list-disc space-y-1 pl-4 text-white">
               {resource.features.map((feature, fIdx) => (
                 <li key={fIdx}>{feature}</li>
               ))}

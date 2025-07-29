@@ -7,15 +7,6 @@ import { motion, AnimatePresence, PanInfo } from "framer-motion";
 import { ArrowRight, ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
-import { Pixelify_Sans } from "next/font/google";
-
-const pixelifySans = Pixelify_Sans({
-  weight: ['400', '500', '600', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  fallback: ['Arial', 'sans-serif']
-});
-
 interface CarouselProps {
   images: StaticImageData[];
 }
@@ -279,7 +270,7 @@ export default function ImageCarousel({ images }: CarouselProps) {
   return (
     <div className="w-full  px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
       <div className="mx-auto mb-4 max-w-4xl text-center sm:mb-6">
-        <h2 className={`${pixelifySans.className} mb-1 text-2xl font-bold text-white sm:mb-2 sm:text-3xl md:text-4xl`}
+        <h2 className="font-pixelify mb-1 text-2xl font-bold text-white sm:mb-2 sm:text-3xl md:text-4xl"
           style={{
             textShadow: '0 0 4px rgba(255, 255, 255, 0.3)',
           }}

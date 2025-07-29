@@ -1,7 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @layer utilities {
   .text-shadow-neon {
     text-shadow: 0 0 10px rgba(0, 255, 245, 0.7);

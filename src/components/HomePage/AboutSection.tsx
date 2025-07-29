@@ -2,14 +2,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import aboutItems, { aboutClub } from "@/data/about";
-import { Pixelify_Sans } from "next/font/google";
 
-const pixelifySans = Pixelify_Sans({
-  weight: ['400', '500', '600', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  fallback: ['Arial', 'sans-serif']
-});
 export default function AboutSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
@@ -30,7 +23,6 @@ export default function AboutSection() {
       id="about"
       className="relative min-h-screen w-full"
     >
-
       {/* Subtle star effect with adjusted gradient */}
       <div className="absolute inset-0">
         <div className="absolute h-full w-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-black-900/20 via-transparent to-transparent opacity-40" />
@@ -43,12 +35,11 @@ export default function AboutSection() {
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className={`${pixelifySans.className} mb-6 text-center text-3xl font-bold text-white sm:mb-10 sm:text-4xl lg:text-5xl`}
+          className="font-pixelify mb-6 text-center text-3xl font-bold text-white sm:mb-10 sm:text-4xl lg:text-5xl"
           style={{ textShadow: '0 0 4px rgba(255, 255, 255, 0.3)' }}
         >
           About Deviators
         </motion.h2>
-
         {/* Welcome Message */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -60,7 +51,6 @@ export default function AboutSection() {
             {aboutClub}
           </p>
         </motion.div>
-
         <div className="relative h-[250px] w-full max-w-3xl px-4 sm:h-[300px]">
           <AnimatePresence mode="wait">
             <motion.div
@@ -72,7 +62,7 @@ export default function AboutSection() {
               className="absolute inset-0 overflow-y-auto rounded-2xl border border-[#0047AB] bg-[#090909]/50  p-6 shadow-xl backdrop-blur-sm sm:p-12"
             >
               <div className="flex h-full flex-col items-center justify-center text-center">
-                <h3 className={`${pixelifySans.className} mb-4 text-2xl font-semibold text-white sm:mb-6 sm:text-3xl`}
+                <h3 className="font-pixelify mb-4 text-2xl font-semibold text-white sm:mb-6 sm:text-3xl"
                   style={{
                     textShadow: '0 0 4px rgba(255, 255, 255, 0.3)',
                   }}>
@@ -85,7 +75,6 @@ export default function AboutSection() {
             </motion.div>
           </AnimatePresence>
         </div>
-
         {/* Navigation dots */}
         <div className="mt-6 flex space-x-2 px-4 sm:mt-8">
           {aboutItems.map((_, index) => (

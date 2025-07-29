@@ -11,9 +11,7 @@ import {
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { FileCode } from "lucide-react";
-
 import "photoswipe/dist/photoswipe.css";
-
 import CyberRoadmap from "./_components/CyberRoadmap";
 import DisplayTeam from "@/components/DisplayTeam";
 import DsaOnlineResources from "./_components/CyberResources";
@@ -40,7 +38,7 @@ export default function CyberResources() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-black via-purple-950 to-purple-900 text-white">
+    <div className="min-h-screen w-full text-white">
       <div className="container mx-auto px-4 py-16 sm:py-24">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -48,7 +46,10 @@ export default function CyberResources() {
           transition={{ duration: 0.8 }}
           className="mb-12 space-y-4 text-balance"
         >
-          <h1 className="bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-center text-4xl font-bold text-transparent md:text-6xl lg:text-7xl">
+          <h1 className="font-pixelify bg-white bg-clip-text text-center text-4xl font-bold text-transparent md:text-6xl lg:text-7xl"
+            style={{
+              textShadow: '0 0 4px rgba(255, 255, 255, 0.3)',
+            }}>
             Cyber Security Resources
           </h1>
           <p className="mx-auto max-w-2xl text-center text-lg text-gray-300">
@@ -76,7 +77,7 @@ export default function CyberResources() {
                 <TabsTrigger
                   key={index}
                   value={tab.key}
-                  className="px-4 py-2 text-sm data-[state=active]:bg-purple-700 sm:px-6 sm:py-3 sm:text-base"
+                  className="px-4 py-2 rounded-full text-sm data-[state=active]:bg-[#0047AB] sm:px-5 sm:py-2 sm:text-base"
                 >
                   <tab.icon className="mr-2 h-4 w-4 sm:mr-3 sm:h-5 sm:w-5" />
                   {tab.name}
@@ -93,9 +94,12 @@ export default function CyberResources() {
           >
             {tabs.map((tab, index) => (
               <TabsContent key={index} value={tab.key} className="space-y-4">
-                <Card className="border-purple-800 bg-black/50 transition-all duration-300 hover:bg-black/60">
+                <Card className="border-[#0047AB] bg-white/5 transition-all duration-300">
                   <CardHeader>
-                    <CardTitle className="text-2xl text-purple-400">
+                    <CardTitle className="font-pixelify text-2xl text-white"
+                    style={{
+                        textShadow: '0 0 4px rgba(255, 255, 255, 0.3)',
+                      }}>
                       {tab.title}
                     </CardTitle>
                     <CardDescription className="text-gray-400">

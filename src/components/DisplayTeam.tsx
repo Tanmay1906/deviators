@@ -2,15 +2,6 @@ import { getTeam } from "@/lib/team";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-import { Pixelify_Sans } from "next/font/google";
-
-const pixelifySans = Pixelify_Sans({
-  weight: ['400', '500', '600', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  fallback: ['Arial', 'sans-serif']
-});
-
 export default function DisplayTeam({ keyword }: { keyword: string }) {
   const teamMembers = getTeam({ keyword });
 
@@ -33,9 +24,9 @@ export default function DisplayTeam({ keyword }: { keyword: string }) {
             <img
               src={member.image.src}
               alt={member.name}
-              className="h-20 w-20 rounded-full object-cover transition-all duration-300 group-hover:shadow-lg group-hover:shadow-purple-500/50"
+              className="h-20 w-20 rounded-full object-cover transition-all duration-300 group-hover:shadow-lg group-hover:shadow-[#0047AB]/50"
             />
-            <p className="mt-2 text-purple-400 transition-colors duration-300 group-hover:text-purple-300">
+            <p className="mt-2 text-white transition-colors duration-300 group-hover:text-[#99c3ff]/300">
               {member.name}
             </p>
           </Link>

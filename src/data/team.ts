@@ -54,7 +54,7 @@ const team: {
       twitter: "https://x.com/vivekchahal09",
     },
     image: Vivek,
-    keywords: ["ios", "founder", "lead", "ios"],
+    keywords: ["ios", "web", "founder", "lead", "ios"],
   },
   {
     name: "Pulkit",

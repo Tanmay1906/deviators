@@ -7,24 +7,27 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center space-y-6">
           <div className="text-center">
-            <Link href="/" className="text-2xl font-bold text-white">
+            <Link href="/" className="font-pixelify text-2xl font-bold text-white">
               Deviators Club
             </Link>
             <p className="opacity-80">estd: 2024</p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-5">
             {socials.map((social) => (
               <Link
                 key={social.name}
                 href={social.url}
-                className="flex gap-1 text-gray-400 transition-colors hover:text-[#0047AB]"
+                className="group flex items-center gap-2 text-sm text-white transition-colors hover:text-[#0047AB]"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <social.icon className="h-6 w-6" title={social.name} />
-                {social.name}
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 transition group-hover:bg-[#0047AB]/30">
+                  <social.icon className="h-5 w-5 text-white transition-colors group-hover:text-white" title={social.name} />
+                </div>
+                <span className="hidden sm:inline">{social.name}</span>
               </Link>
+
             ))}
           </div>
         </div>

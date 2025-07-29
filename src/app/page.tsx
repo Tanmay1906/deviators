@@ -14,7 +14,6 @@ export default function Home() {
   return (
     <>
       <main className="relative">
-
         {/* Content Sections */}
         <HeroSection />
         <AboutSection />

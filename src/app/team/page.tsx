@@ -3,21 +3,12 @@ import team from "@/data/team";
 import { GlobeAltIcon } from "@heroicons/react/24/outline";
 import { Twitter } from "lucide-react";
 
-import { Pixelify_Sans } from "next/font/google";
-
-const pixelifySans = Pixelify_Sans({
-  weight: ['400', '500', '600', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  fallback: ['Arial', 'sans-serif']
-});
-
 export default function TeamSection() {
   return (
     <section id="team" className="py-16 pt-20 lg:pt-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
-          <h2 className={`${pixelifySans.className} bg-white bg-clip-text text-3xl font-bold text-transparent md:text-5xl`}
+          <h2 className="font-pixelify bg-white bg-clip-text text-3xl font-bold text-transparent md:text-5xl"
           style={{
                   textShadow: '0 0 4px rgba(255, 255, 255, 0.3)',
                 }}>
@@ -43,7 +34,7 @@ export default function TeamSection() {
                     className="sm:border-3 size-full rounded-full border-2 border-black object-cover shadow-lg ring-2 ring-white sm:ring-2"
                   />
                 </div>
-                <h3 className={`${pixelifySans.className} mb-2 text-xl font-semibold text-white sm:text-2xl pb-2`}
+                <h3 className="font-pixelify mb-2 text-xl font-semibold text-white sm:text-2xl pb-2"
                   style={{
                     textShadow: '0 0 4px rgba(255, 255, 255, 0.3)',
                   }}

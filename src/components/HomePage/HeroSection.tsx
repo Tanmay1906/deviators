@@ -7,15 +7,6 @@ import { ArrowRightIcon, BriefcaseIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import posts from "@/data/posts";
 
-import { Pixelify_Sans } from "next/font/google";
-
-const pixelifySans = Pixelify_Sans({
-  weight: ['400', '500', '600', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  fallback: ['Arial', 'sans-serif']
-});
-
 export default function HeroSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
@@ -38,27 +29,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center overflow-hidden pt-10 text-white"
-    >
-      {/* <div className="absolute inset-0 flex items-center justify-center">
-        <motion.div
-          // animate={{
-          //   scale: [1, 1.2, 1],
-          //   rotate: [0, 180, 360],
-          // }}
-          // transition={{
-          //   duration: 20,
-          //   repeat: Infinity,
-          //   ease: "linear",
-          // }}
-          className="h-[800px] w-[800px] opacity-30 blur-[100px]"
-          style={{
-            background:
-              "conic-gradient(from 0deg at 50% 50%, #5e5e5eff, #282828ff, #626262ff, #000000ff)",
-          }}
-        />
-      </div> */}
-
+      className="relative flex min-h-screen items-center overflow-hidden pt-10 text-white">
       <div
         className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
         onMouseEnter={() => setIsHovering(true)}
@@ -77,28 +48,23 @@ export default function HeroSection() {
                   Code. Create. Deviate.
                 </span>
               </div>
-
               <h1
-                className={`${pixelifySans.className} bg-white bg-clip-text text-4xl font-black text-transparent sm:text-5xl lg:text-6xl`}
+                className="font-pixelify bg-white bg-clip-text text-4xl font-black text-transparent sm:text-5xl lg:text-6xl"
                 style={{
                   textShadow: '0 0 4px rgba(255, 255, 255, 0.3)',
                 }}
               >
                 Deviators Club
               </h1>
-
-
               <p className="max-w-xl text-xl text-gray-300 sm:text-2xl">
                 Welcome to Deviators – The coolest tech haven on the campus!
               </p>
-
               <p className="max-w-xl text-xl text-gray-400 sm:text-xl">
                 Whether you&apos;re a newbie or seasoned coder, we provide a
                 platform full of innovation, learnings, and fun. Let&apos;s
                 build and push the boundaries of what&apos;s possible together!
               </p>
             </motion.div>
-
             {/* <div className="flex flex-col gap-4 sm:flex-row">
               <Link
                 href={"https://forms.gle/Pd86V6uGVUEjfcMx5"}
@@ -119,7 +85,6 @@ export default function HeroSection() {
                   />
                 </motion.button>
               </Link>
-
               {showHiringBtn && (
                 <Link href="/we-are-hiring" className="w-full sm:w-auto">
                   <motion.button
@@ -143,7 +108,6 @@ export default function HeroSection() {
               )}
             </div> */}
           </div>
-
           {/* Right Content - Activity Showcase */}
           <div className="relative h-[400px] sm:h-[450px] lg:h-[500px]">
             <AnimatePresence mode="wait">
@@ -158,14 +122,12 @@ export default function HeroSection() {
                       exit={{ opacity: 0, x: -50 }}
                       transition={{ duration: 0.5 }}
                     >
-
                       <div
                         className={`inline-flex rounded-xl bg-[#0047AB] p-4`}
                       >
                         <activity.icon className="h-8 w-8 text-white" />
                       </div>
-
-                      <h3 className={`${pixelifySans.className} mt-4 text-xl font-bold sm:text-3xl`}
+                      <h3 className="font-pixelify mt-4 text-xl font-bold sm:text-3xl"
                         style={{
                           textShadow: '0 0 4px rgba(255, 255, 255, 0.3)',
                         }}>
@@ -174,13 +136,11 @@ export default function HeroSection() {
                       <p className="mt-2 text-md text-gray-400 sm:text-md">
                         {activity.description}
                       </p>
-
                       <div className="mt-6 flex items-center gap-2">
                         <div className="rounded-full bg-[#0047AB] px-3 py-1 text-sm text-white-300">
                           {activity.stats}
                         </div>
                       </div>
-
                       <div className="absolute bottom-6 right-6 text-gray-500">
                         {index + 1}/{activities.length}
                       </div>
@@ -188,7 +148,6 @@ export default function HeroSection() {
                   ),
               )}
             </AnimatePresence>
-
             <div className="absolute bottom-4 left-4 flex gap-2">
               {activities.map((_, index) => (
                 <motion.button

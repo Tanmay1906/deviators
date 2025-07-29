@@ -84,7 +84,7 @@ export default function WebDevRoadmap() {
         className="mt-4 space-y-4 text-center"
       >
         <Button
-          className="bg-[#0047AB] text-white transition-all duration-300 hover:bg-[#003399]"
+          className="bg-[#0047AB] rounded-full text-white transition-all duration-300 hover:bg-[#003399]"
           size="lg"
           onClick={() =>
             window.open(

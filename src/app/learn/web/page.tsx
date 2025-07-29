@@ -11,24 +11,13 @@ import {
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Code, FileCode, Globe, Laptop, Server } from "lucide-react";
-
 import "photoswipe/dist/photoswipe.css";
-
 import FullStack from "./_components/FullStack";
 import Html from "./_components/Html";
 import WebDevRoadmap from "./_components/WebDevRoadmap";
 import Css from "./_components/Css";
 import Javascript from "./_components/Javascript";
 import DisplayTeam from "@/components/DisplayTeam";
-
-import { Pixelify_Sans } from "next/font/google";
-
-const pixelifySans = Pixelify_Sans({
-  weight: ['400', '500', '600', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  fallback: ['Arial', 'sans-serif']
-});
 
 const WebDevResources = () => {
   const [selectedTab, setSelectedTab] = useState("");
@@ -60,7 +49,7 @@ const WebDevResources = () => {
           transition={{ duration: 0.8 }}
           className="mb-12 space-y-4"
         >
-          <h1 className={`${pixelifySans.className} bg-white bg-clip-text text-center text-4xl font-bold text-transparent md:text-6xl lg:text-7xl`}
+          <h1 className="font-pixelify bg-white bg-clip-text text-center text-4xl font-bold text-transparent md:text-6xl lg:text-7xl"
             style={{
               textShadow: '0 0 4px rgba(255, 255, 255, 0.3)',
             }}>
@@ -108,7 +97,11 @@ const WebDevResources = () => {
               <TabsContent key={index} value={tab.key} className="space-y-4">
                 <Card className="border-[#0047AB] bg-white/5 transition-all duration-300">
                   <CardHeader>
-                    <CardTitle className={`${pixelifySans.className} text-3xl text-white`}>
+                    <CardTitle className="font-pixelify text-3xl text-white"
+                    style={{
+                  textShadow: '0 0 4px rgba(255, 255, 255, 0.3)',
+                }}
+                >
                       {tab.title}
                     </CardTitle>
                     <CardDescription className="text-gray-400">

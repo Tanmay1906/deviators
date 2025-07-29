@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import { motion } from "framer-motion";
 import {
@@ -12,15 +11,6 @@ import {
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { tracks } from "@/data/resources";
-
-import { Pixelify_Sans } from "next/font/google";
-
-const pixelifySans = Pixelify_Sans({
-  weight: ['400', '500', '600', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  fallback: ['Arial', 'sans-serif']
-});
 
 export default function LearnPage() {
   const fadeInVariants = {
@@ -50,7 +40,7 @@ export default function LearnPage() {
           animate="visible"
           className="mb-16 space-y-6"
         >
-          <h1 className={`${pixelifySans.className} bg-white bg-clip-text text-center text-4xl font-extrabold text-transparent md:text-6xl lg:text-6xl`}
+          <h1 className="font-pixelify bg-white bg-clip-text text-center text-4xl font-extrabold text-transparent md:text-6xl lg:text-6xl"
           style={{
             textShadow: '0 0 4px rgba(255, 255, 255, 0.3)',
           }}>
@@ -84,7 +74,7 @@ export default function LearnPage() {
                         className="h-full w-full object-contain p-1"
                       />
                     </div>
-                    <CardTitle className={`${pixelifySans.className} text-2xl font-bold text-white`}
+                    <CardTitle className="font-pixelify text-2xl font-bold text-white"
                     style={{
                       textShadow: '0 0 4px rgba(255, 255, 255, 0.3)',
                     }}>

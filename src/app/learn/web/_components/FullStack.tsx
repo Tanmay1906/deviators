@@ -17,7 +17,11 @@ export default function FullStack() {
     <Accordion type="single" collapsible className="w-full">
       {FullStackResources.map((resource, index) => (
         <AccordionItem key={index} value={resource.name}>
-          <AccordionTrigger>{resource.name}</AccordionTrigger>
+          <AccordionTrigger>
+            <h2 className="text-lg font-semibold text-white md:text-xl">
+              {resource.name}
+            </h2>
+          </AccordionTrigger>
           <AccordionContent>
             <p className="mb-2">{resource.desc}</p>
             <ul className="space-y-4">
@@ -28,13 +32,13 @@ export default function FullStack() {
                   initial="hidden"
                   animate="visible"
                   transition={{ delay: index * 0.1 }}
-                  className="rounded-lg bg-purple-900/30 p-3"
+                  className="rounded-lg bg-[#0047AB]/30 p-3"
                 >
                   <a
                     href={item.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center text-purple-400 hover:underline"
+                    className="flex items-center text-white hover:underline"
                   >
                     <Youtube className="mr-2 h-4 w-4" />
                     {item.title}

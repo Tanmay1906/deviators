@@ -18,7 +18,7 @@ export default function CyberRoadmap() {
         {cyberRoadmapData.map((category, idx) => (
           <AccordionItem key={idx} value={category.category}>
             <AccordionTrigger>
-              <h2 className="text-lg font-semibold text-purple-200 md:text-xl">
+              <h2 className="text-lg font-semibold text-white md:text-xl">
                 {category.category}
               </h2>
             </AccordionTrigger>
@@ -39,17 +39,17 @@ export default function CyberRoadmap() {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: itemIdx * 0.1 }}
-                      className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-purple-800/40 to-purple-900/40 p-4 transition-all duration-300 hover:from-purple-700/40 hover:to-purple-800/40"
+                      className="group relative overflow-hidden rounded-xl bg-[#0047AB]/30 p-4 transition-all duration-300"
                     >
                       <div className="space-y-4">
                         <div className="flex">
-                          <ChevronRight className="h-6 w-6 text-purple-400 opacity-50 transition-all group-hover:text-purple-300 group-hover:opacity-100" />
-                          <h3 className="text-lg font-semibold text-purple-100 transition-colors group-hover:text-white">
+                          <ChevronRight className="h-6 w-6 text-white opacity-50 transition-all group-hover:text-white group-hover:opacity-100" />
+                          <h3 className="text-lg font-semibold text-white transition-colors group-hover:text-white">
                             {item.title}
                           </h3>
                         </div>
                         <div className="space-y-3">
-                          <h4 className="text-sm font-medium text-purple-300">
+                          <h4 className="text-sm font-medium text-white">
                             Topics:{" "}
                             {item.topics.reduce(
                               (acc, curr) => acc + ", " + curr,
@@ -59,7 +59,7 @@ export default function CyberRoadmap() {
                             {item.resources.map((resource, resIdx) => (
                               <li
                                 key={resIdx}
-                                className="text-sm text-purple-300"
+                                className="text-sm text-white"
                               >
                                 - {resource}
                               </li>

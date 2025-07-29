@@ -18,7 +18,7 @@ export default function DsaRoadmap() {
         {dsaRoadmapData.map((category, idx) => (
           <AccordionItem key={idx} value={category.category}>
             <AccordionTrigger>
-              <h2 className="text-lg font-semibold text-purple-200 md:text-xl">
+              <h2 className="text-lg font-semibold text-white md:text-xl">
                 {category.category}
               </h2>
             </AccordionTrigger>
@@ -42,13 +42,13 @@ export default function DsaRoadmap() {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: itemIdx * 0.1 }}
-                      className={`flex items-center space-x-3 rounded-lg bg-purple-800/30 p-3 ${
+                      className={`flex items-center space-x-3 rounded-lg bg-[#0047AB]/30 p-3 ${
                         item.link ? "underline" : ""
                       }`}
                     >
-                      <ChevronRight className="mt-1 h-5 w-5 flex-shrink-0 text-purple-400" />
+                      <ChevronRight className="mt-1 h-5 w-5 flex-shrink-0 text-white" />
                       <div>
-                        <h3 className="font-semibold text-purple-200">
+                        <h3 className="font-semibold text-white">
                           {item.title}
                         </h3>
                       </div>

@@ -15,11 +15,11 @@ export default function DsaOnlineResources() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: idx * 0.1 }}
-          className="flex items-center space-x-3 rounded-lg bg-purple-800/30 p-3"
+          className="flex items-center space-x-3 rounded-lg bg-[#0047AB]/30 p-3"
         >
-          <ChevronRight className="mt-1 h-5 w-5 flex-shrink-0 text-purple-400" />
+          <ChevronRight className="mt-1 h-5 w-5 flex-shrink-0 text-white" />
           <div>
-            <h3 className="font-semibold text-purple-200 underline">
+            <h3 className="font-semibold text-white underline">
               {category.title}
             </h3>
           </div>
@@ -27,7 +27,7 @@ export default function DsaOnlineResources() {
       ))}
 
       <h2>
-        <span className="text-purple-400">Coding Platforms</span>
+        <span className="text-white text-xl font-semibold">Coding Platforms</span>
       </h2>
       {codingPlatforms.map((category, idx) => (
         <motion.a
@@ -37,11 +37,11 @@ export default function DsaOnlineResources() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: idx * 0.1 }}
-          className="flex items-center space-x-3 rounded-lg bg-purple-800/30 p-3"
+          className="flex items-center space-x-3 rounded-lg bg-[#0047AB]/30 p-3"
         >
-          <ChevronRight className="mt-1 h-5 w-5 flex-shrink-0 text-purple-400" />
+          <ChevronRight className="mt-1 h-5 w-5 flex-shrink-0 text-white" />
           <div>
-            <h3 className="font-semibold text-purple-200 underline">
+            <h3 className="font-semibold text-white underline">
               {category.title}
             </h3>
           </div>

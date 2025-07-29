@@ -15,6 +15,7 @@ export const ParallaxScroll = ({
   className?: string;
 }) => {
   const gridRef = useRef<HTMLDivElement>(null);
+
   const { scrollYProgress } = useScroll({
     container: gridRef,
     offset: ["start start", "end start"],
@@ -54,7 +55,7 @@ function RenderImage({
   slug: string;
 }) {
   return (
-    <Link href={"/gallery/" + slug}>
+    <Link href={`/gallery/${slug}`}>
       <motion.div
         style={{ y: translateY }}
         className="group relative overflow-hidden rounded-lg"
@@ -67,8 +68,11 @@ function RenderImage({
           alt={title}
           loading="lazy"
         />
-        <div className="absolute inset-0 flex items-end justify-start bg-black bg-opacity-50 p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-          <h3 className="text-lg font-semibold text-white">{title}</h3>
+        {/* Overlay container */}
+        <div className="absolute inset-0 flex items-end justify-center sm:justify-start bg-black/50 p-4 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
+          <h3 className="text-lg sm:text-xl font-semibold text-white text-center truncate">
+            {title}
+          </h3>
         </div>
       </motion.div>
     </Link>

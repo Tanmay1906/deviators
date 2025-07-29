@@ -16,7 +16,7 @@ import DisplayTeam from "@/components/DisplayTeam";
 
 export default function IosLearnPage() {
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-black via-purple-950 to-purple-900 text-white">
+    <div className="min-h-screen w-full text-white">
       <div className="container mx-auto px-4 py-16 sm:py-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -24,7 +24,10 @@ export default function IosLearnPage() {
           transition={{ duration: 0.6 }}
           className="mb-12 space-y-4"
         >
-          <h1 className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-center text-4xl font-extrabold text-transparent md:text-5xl">
+          <h1 className="font-pixelify bg-white bg-clip-text text-center text-4xl font-extrabold text-transparent md:text-5xl"
+            style={{
+              textShadow: '0 0 4px rgba(255, 255, 255, 0.3)',
+            }}>
             iOS Development Learning Resources
           </h1>
           <p className="mx-auto max-w-2xl text-center text-lg text-gray-300">
@@ -40,16 +43,18 @@ export default function IosLearnPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="rounded-lg border border-purple-800 bg-gray-900/80 shadow-lg"
             >
-              <Card>
+              <Card className="border-[#0047AB] bg-white/5 transition-all duration-300">
                 <CardHeader className="p-6">
                   <div className="flex items-center justify-between">
-                    <CardTitle className="text-2xl font-semibold text-purple-400">
+                    <CardTitle className="font-pixelify text-2xl font-semibold text-white"
+                      style={{
+                        textShadow: '0 0 4px rgba(255, 255, 255, 0.3)',
+                      }}>
                       {resource.name}
                     </CardTitle>
                     <Link href={resource.url} target="_blank">
-                      <Button className="bg-purple-700 hover:bg-purple-600">
+                      <Button className="relative bg-[#0047AB] rounded-full font-medium transition-all duration-300 text-white after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:translate-y-2 after:bg-[#003366]/50 after:blur-lg hover:bg-[#003366] hover:after:translate-y-0">
                         Go to Resource
                       </Button>
                     </Link>
@@ -60,7 +65,7 @@ export default function IosLearnPage() {
                   <Accordion type="single" collapsible>
                     <AccordionItem value="overview">
                       <AccordionTrigger>
-                        <h2 className="text-lg font-semibold text-purple-300">
+                        <h2 className="text-lg font-semibold text-white">
                           Overview
                         </h2>
                       </AccordionTrigger>
@@ -73,7 +78,7 @@ export default function IosLearnPage() {
 
                     <AccordionItem value="topics-covered">
                       <AccordionTrigger>
-                        <h2 className="text-lg font-semibold text-purple-300">
+                        <h2 className="text-lg font-semibold text-white">
                           Topics Covered
                         </h2>
                       </AccordionTrigger>
@@ -88,7 +93,7 @@ export default function IosLearnPage() {
 
                     <AccordionItem value="goal">
                       <AccordionTrigger>
-                        <h2 className="text-lg font-semibold text-purple-300">
+                        <h2 className="text-lg font-semibold text-white">
                           Goal
                         </h2>
                       </AccordionTrigger>

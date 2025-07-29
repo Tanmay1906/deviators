@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "@/components/Footer";
-
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { metaDataBase } from "@/data/metaData";
 import Navbar from "@/components/Navbar";
-
 import { Quicksand} from 'next/font/google';
 
 const quicksand = Quicksand({
@@ -15,16 +13,6 @@ const quicksand = Quicksand({
   display: 'swap',
   fallback: ['Arial', 'sans-serif']
 });
-
-// import { Pixelify_Sans } from 'next/font/google';
-
-// const pixelifySans = Pixelify_Sans({
-//   weight: ['400', '500', '600', '700'],
-//   subsets: ['latin'],
-//   display: 'swap',
-//   fallback: ['Arial', 'sans-serif']
-// });
-
 
 export const metadata: Metadata = {
   ...metaDataBase,
@@ -48,7 +36,6 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
-
         {/* Vercel analytics & Speed Counter */}
         {process.env.NODE_ENV === "production" && <Analytics />}
         {process.env.NODE_ENV === "production" && <SpeedInsights />}

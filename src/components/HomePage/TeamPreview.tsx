@@ -6,15 +6,6 @@ import team from "@/data/team";
 import { useEffect, useState } from "react";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
-import { Pixelify_Sans } from "next/font/google";
-
-const pixelifySans = Pixelify_Sans({
-  weight: ['400', '500', '600', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  fallback: ['Arial', 'sans-serif']
-});
-
 export default function TeamPreview() {
   const [visibleMembers, setVisibleMembers] = useState(4);
   const totalMembers = team.length;
@@ -42,7 +33,7 @@ export default function TeamPreview() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col space-y-6 sm:space-y-8">
           <div>
-            <h2 className={`${pixelifySans.className} text-3xl font-bold text-white-400 sm:text-5xl`}
+            <h2 className="font-pixelify text-3xl font-bold text-white-400 sm:text-5xl"
             style={{
                   textShadow: '0 0 4px rgba(255, 255, 255, 0.3)',
                 }}>
@@ -52,7 +43,6 @@ export default function TeamPreview() {
               Meet the innovators behind Deviators Club
             </p>
           </div>
-
           <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center sm:gap-8">
             <div className="xs:-space-x-6 flex flex-wrap -space-x-4 sm:flex-nowrap sm:-space-x-8">
               {team
@@ -86,7 +76,6 @@ export default function TeamPreview() {
                 </div>
               )}
             </div>
-
             <Link
               href="/team"
               className="group inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm text-white transition-all duration-300 hover:gap-3 hover:bg-[#0047AB] sm:text-base"
