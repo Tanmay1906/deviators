@@ -13,6 +13,7 @@ import { CountdownTimer } from "@/components/CountdownTimer";
 import { POST } from "@/types/post";
 import { Metadata } from "next";
 import { metaDataBase } from "@/data/metaData";
+import ClientBackground3D from "@/components/3D/ClientBackground3D";
 
 interface PostCardProps {
   post: POST;
@@ -83,45 +84,50 @@ export default function Page() {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#0F0F1A] via-[#1A1A2E] to-[#2A1A3A] pt-20 text-white lg:pt-24">
-      <div className="container mx-auto px-4 py-16">
-        <div className="mb-16 text-center">
-          <h1 className="mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-5xl font-bold text-transparent">
-            We&apos;re Hiring!
-          </h1>
-          <p className="mx-auto max-w-2xl text-lg text-gray-300">
-            Join our rebellion and help us push the boundaries of what&apos;s
-            possible.
-          </p>
-        </div>
+    <>
+      {/* 3D Background */}
+      <ClientBackground3D />
 
-        {sortedPosts.length > 0 ? (
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {sortedPosts.map((post, index) => (
-              <PostCard key={index} post={post} />
-            ))}
+      <div className="relative min-h-screen bg-gradient-to-br from-[#0F0F1A] via-[#1A1A2E] to-[#2A1A3A] pt-20 text-white lg:pt-24">
+        <div className="container mx-auto px-4 py-16">
+          <div className="mb-16 text-center">
+            <h1 className="mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-5xl font-bold text-transparent">
+              We&apos;re Hiring!
+            </h1>
+            <p className="mx-auto max-w-2xl text-lg text-gray-300">
+              Join our rebellion and help us push the boundaries of what&apos;s
+              possible.
+            </p>
           </div>
-        ) : (
-          <Card className="mx-auto max-w-2xl border-[#2A2A4A] bg-[#1A1A2E]/50 shadow-lg backdrop-blur-sm">
-            <CardContent className="py-12 text-center">
-              <h3 className="mb-4 text-2xl font-semibold text-white">
-                No Positions Available
-              </h3>
-              <p className="mb-6 text-gray-300">
-                We don&apos;t have any positions right now, but the rebellion is
-                always growing!
-              </p>
-              <Button
-                variant="outline"
-                className="border-purple-500/50 text-purple-300 hover:bg-purple-500/20"
-              >
-                Check Back Later
-              </Button>
-            </CardContent>
-          </Card>
-        )}
+
+          {sortedPosts.length > 0 ? (
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {sortedPosts.map((post, index) => (
+                <PostCard key={index} post={post} />
+              ))}
+            </div>
+          ) : (
+            <Card className="mx-auto max-w-2xl border-[#2A2A4A] bg-[#1A1A2E]/50 shadow-lg backdrop-blur-sm">
+              <CardContent className="py-12 text-center">
+                <h3 className="mb-4 text-2xl font-semibold text-white">
+                  No Positions Available
+                </h3>
+                <p className="mb-6 text-gray-300">
+                  We don&apos;t have any positions right now, but the rebellion
+                  is always growing!
+                </p>
+                <Button
+                  variant="outline"
+                  className="border-purple-500/50 text-purple-300 hover:bg-purple-500/20"
+                >
+                  Check Back Later
+                </Button>
+              </CardContent>
+            </Card>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

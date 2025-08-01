@@ -1,6 +1,6 @@
 import HeroSection from "@/components/HomePage/HeroSection";
 import AboutSection from "@/components/HomePage/AboutSection";
-import TeamPreviewSection from "@/components/HomePage/TeamPreview/TeamPreview";
+import TeamPreviewSection from "@/components/HomePage/TeamPreview";
 import events from "@/data/event";
 import ImageCarousel from "@/components/HomePage/ImageCarousel";
 import GroupPicture from "@/assets/group_pic.png";
