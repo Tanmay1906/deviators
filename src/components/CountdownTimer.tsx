@@ -24,9 +24,17 @@ export const CountdownTimer = ({ expiresOn }: { expiresOn: Date }) => {
     return timeLeft;
   };
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(expiresOn));
+  const [timeLeft, setTimeLeft] = useState(() => ({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  }));
 
   useEffect(() => {
+    // Calculate initial time only after mount
+    setTimeLeft(calculateTimeLeft(expiresOn));
+
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft(expiresOn));
     }, 1000);

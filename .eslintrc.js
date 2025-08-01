@@ -54,6 +54,25 @@ module.exports = {
     "react-hooks/exhaustive-deps": "warn",
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
+    "react/no-unknown-property": [
+      "error",
+      {
+        "ignore": [
+          "args",
+          "attach",
+          "position",
+          "rotation",
+          "scale",
+          "intensity",
+          "decay",
+          "distance",
+          "transparent",
+          "wireframe",
+          "emissive",
+          "emissiveIntensity"
+        ]
+      }
+    ],
     "prettier/prettier": "warn",
   },
   settings: {

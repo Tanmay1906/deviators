@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { activities } from "@/data/heroSection";
-import AnimatedBackground from "@/components/HomePage/AnimatedBackground";
+import ClientBackground3D from "@/components/3D/ClientBackground3D";
 
 export default function HeroSection() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -20,12 +20,12 @@ export default function HeroSection() {
 
   return (
     <>
-      {/* Fallback Background */}
-      <AnimatedBackground />
+      {/* 3D Background */}
+      <ClientBackground3D />
 
       <section
         id="home"
-        className="relative z-10 flex min-h-screen items-center overflow-hidden pt-10 text-white"
+        className="relative flex min-h-screen items-center overflow-hidden pt-10 text-white"
       >
         <div
           className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
