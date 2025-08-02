@@ -1,6 +1,6 @@
 import HeroSection from "@/components/HomePage/HeroSection";
 import AboutSection from "@/components/HomePage/AboutSection";
-import TeamPreviewSection from "@/components/HomePage/TeamPreview";
+import TeamShowcase from "@/components/HomePage/TeamShowcase";
 import events from "@/data/event";
 import ImageCarousel from "@/components/HomePage/ImageCarousel";
 import GroupPicture from "@/assets/group_pic.png";
@@ -17,7 +17,7 @@ export default function Home() {
         {/* Content Sections */}
         <HeroSection />
         <AboutSection />
-        <TeamPreviewSection />
+        <TeamShowcase />
         <ImageCarousel images={images} />
       </main>
     </>

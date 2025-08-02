@@ -74,6 +74,14 @@ const config: Config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      perspective: {
+        '500': '500px',
+        '1000': '1000px',
+        '1500': '1500px',
+      },
+      screens: {
+        'xs': '475px',
+      },
     },
   },
   plugins: [TailwindAnimate],
