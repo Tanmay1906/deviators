@@ -20,7 +20,7 @@ export default function Css() {
           <h2 className="text-lg font-semibold text-white md:text-xl">
             Learning Resources
           </h2>
-          </AccordionTrigger>
+        </AccordionTrigger>
         <AccordionContent>
           <ul className="space-y-4">
             {CssResources.resources.map((resource, index) => (

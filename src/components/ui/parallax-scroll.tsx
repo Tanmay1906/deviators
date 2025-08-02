@@ -4,6 +4,7 @@ import { MotionValue, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import { StaticImageData } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import { ALLIMAGESDATA } from "@/types/event";
 
@@ -60,17 +61,16 @@ function RenderImage({
         style={{ y: translateY }}
         className="group relative overflow-hidden rounded-lg"
       >
-        <img
+        <Image
           src={el.src}
-          className="transition-scale h-80 w-full object-cover duration-300 group-hover:scale-110"
           height={400}
           width={400}
           alt={title}
-          loading="lazy"
+          className="transition-scale h-80 w-full object-cover duration-300 group-hover:scale-110"
         />
         {/* Overlay container */}
-        <div className="absolute inset-0 flex items-end justify-center sm:justify-start bg-black/50 p-4 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
-          <h3 className="text-lg sm:text-xl font-semibold text-white text-center truncate">
+        <div className="absolute inset-0 flex items-end justify-center bg-black/50 p-4 opacity-100 transition-opacity duration-300 sm:justify-start sm:opacity-0 sm:group-hover:opacity-100">
+          <h3 className="truncate text-center text-lg font-semibold text-white sm:text-xl">
             {title}
           </h3>
         </div>

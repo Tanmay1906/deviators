@@ -2,15 +2,24 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import team from "@/data/team";
 import { useEffect, useState } from "react";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 export default function TeamPreview() {
   const [visibleMembers, setVisibleMembers] = useState(4);
+  const [shuffledTeam, setShuffledTeam] = useState(team);
+  const [mounted, setMounted] = useState(false);
   const totalMembers = team.length;
 
   useEffect(() => {
+    setMounted(true);
+
+    // Shuffle team array on client side only
+    const shuffled = [...team].sort(() => Math.random() - 0.5);
+    setShuffledTeam(shuffled);
+
     const updateVisibleMembers = () => {
       if (window.innerWidth < 640) {
         setVisibleMembers(3);
@@ -47,19 +56,20 @@ export default function TeamPreview() {
           </div>
           <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center sm:gap-8">
             <div className="xs:-space-x-6 flex flex-wrap -space-x-4 sm:flex-nowrap sm:-space-x-8">
-              {team
-                .sort(() => Math.random() - 0.5)
+              {(mounted ? shuffledTeam : team)
                 .slice(0, visibleMembers)
                 .map((member, index) => (
                   <div
-                    key={index}
+                    key={mounted ? `${member.name}-${index}` : index}
                     className="xs:h-20 xs:w-20 relative h-16 w-16 transition-all duration-300 hover:z-10 hover:scale-110 sm:h-24 sm:w-24"
                     style={{ zIndex: team.length - index }}
                   >
-                    <img
+                    <Image
                       src={member.image.src}
                       alt={member.name}
                       title={member.name}
+                      width={96}
+                      height={96}
                       className="sm:border-3 size-full rounded-full border-2 border-black object-cover shadow-lg ring-2 ring-white sm:ring-2"
                     />
                     <div className="xs:block absolute -bottom-1 left-1/2 hidden -translate-x-1/2">

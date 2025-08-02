@@ -3,6 +3,7 @@
 
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import type { StaticImageData } from "next/image";
+import Image from "next/image";
 import { motion, AnimatePresence, PanInfo } from "framer-motion";
 import { ArrowRight, ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
@@ -39,8 +40,9 @@ const swipePower = (offset: number, velocity: number) => {
 function CustomCursor({ isLeft }: { isLeft: boolean }) {
   return (
     <div
-      className={`pointer-events-none flex h-16 w-16 items-center justify-center rounded-full ${isLeft ? "bg-[#0047AB]" : "bg-[#0047AB]"
-        } opacity-60 shadow-lg`}
+      className={`pointer-events-none flex h-16 w-16 items-center justify-center rounded-full ${
+        isLeft ? "bg-[#0047AB]" : "bg-[#0047AB]"
+      } opacity-60 shadow-lg`}
     >
       {isLeft ? (
         <ArrowLeft className="h-8 w-8 text-white" />
@@ -100,8 +102,9 @@ function TouchableControls({
               resetTimeout();
               setPage([index, index > slideIndex ? 1 : -1]);
             }}
-            className={`h-2 w-2 rounded-full shadow-lg transition-colors sm:h-3 sm:w-3 ${index === slideIndex ? "bg-white" : "bg-white/50"
-              }`}
+            className={`h-2 w-2 rounded-full shadow-lg transition-colors sm:h-3 sm:w-3 ${
+              index === slideIndex ? "bg-white" : "bg-white/50"
+            }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
@@ -217,6 +220,7 @@ function NonTouchableCarousel({
 export default function ImageCarousel({ images }: CarouselProps) {
   const [isTouchableDevice, setIsTouchableDevice] = useState(false);
   const [[page, direction], setPage] = useState([0, 0]);
+  const [mounted, setMounted] = useState(false);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const slideIndex = Math.abs(page % images.length);
@@ -229,10 +233,14 @@ export default function ImageCarousel({ images }: CarouselProps) {
   );
 
   const checkIsTouchableDevice = useCallback(() => {
-    setIsTouchableDevice(window.matchMedia("(pointer: coarse)").matches);
+    if (typeof window !== "undefined") {
+      setIsTouchableDevice(window.matchMedia("(pointer: coarse)").matches);
+    }
   }, []);
 
   useEffect(() => {
+    setMounted(true);
+
     if (typeof window === "undefined") return;
 
     checkIsTouchableDevice();
@@ -241,6 +249,8 @@ export default function ImageCarousel({ images }: CarouselProps) {
   }, [checkIsTouchableDevice]);
 
   useEffect(() => {
+    if (!mounted) return;
+
     intervalRef.current = setInterval(() => {
       paginate(1);
     }, 3000);
@@ -250,7 +260,7 @@ export default function ImageCarousel({ images }: CarouselProps) {
         clearInterval(intervalRef.current);
       }
     };
-  }, [paginate]);
+  }, [paginate, mounted]);
 
   const resetTimeout = useCallback(() => {
     if (intervalRef.current) {
@@ -268,11 +278,12 @@ export default function ImageCarousel({ images }: CarouselProps) {
   }, []);
 
   return (
-    <div className="w-full  px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+    <div className="w-full px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
       <div className="mx-auto mb-4 max-w-4xl text-center sm:mb-6">
-        <h2 className="font-pixelify mb-1 text-2xl font-bold text-white sm:mb-2 sm:text-3xl md:text-4xl"
+        <h2
+          className="mb-1 font-pixelify text-2xl font-bold text-white sm:mb-2 sm:text-3xl md:text-4xl"
           style={{
-            textShadow: '0 0 4px rgba(255, 255, 255, 0.3)',
+            textShadow: "0 0 4px rgba(255, 255, 255, 0.3)",
           }}
         >
           View Our Gallery
@@ -290,7 +301,15 @@ export default function ImageCarousel({ images }: CarouselProps) {
       </div>
 
       <div className="relative mx-auto mt-4 h-[250px] w-full max-w-4xl overflow-hidden sm:mt-8 sm:h-[350px] md:h-[450px] lg:h-[500px]">
-        {isTouchableDevice ? (
+        {!mounted ? (
+          // Static fallback for SSR
+          <Image
+            src={images[0].src}
+            alt="Gallery preview"
+            fill
+            className="absolute h-full w-full object-cover"
+          />
+        ) : isTouchableDevice ? (
           <>
             <AnimatePresence initial={false} custom={direction}>
               <motion.img

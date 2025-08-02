@@ -145,6 +145,12 @@ body {
   }
 }
 
+[data-radix-tabs="list"] {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
 .animate-float-slow {
   animation: float-slow 10s ease-in-out infinite;
 }

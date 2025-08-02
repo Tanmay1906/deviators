@@ -57,7 +57,7 @@ module.exports = {
     "react/no-unknown-property": [
       "error",
       {
-        "ignore": [
+        ignore: [
           "args",
           "attach",
           "position",
@@ -69,9 +69,9 @@ module.exports = {
           "transparent",
           "wireframe",
           "emissive",
-          "emissiveIntensity"
-        ]
-      }
+          "emissiveIntensity",
+        ],
+      },
     ],
     "prettier/prettier": "warn",
   },

@@ -44,13 +44,29 @@ export default function AnimatedBackground({
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    // Add a small delay to ensure hydration is complete
+    const timer = setTimeout(() => {
+      setMounted(true);
+    }, 100);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
     <div className={className}>
       {/* Base gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
+
+      {/* Static grid overlay that's safe for SSR */}
+      <div
+        className="absolute inset-0 opacity-5"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px)
+          `,
+          backgroundSize: "50px 50px",
+        }}
+      />
 
       {/* Only show animations after mount to prevent hydration issues */}
       {mounted && (
@@ -107,41 +123,24 @@ export default function AnimatedBackground({
         </>
       )}
 
-      {/* Static elements that are safe for SSR */}
-      {/* Grid overlay */}
-      <div
-        className="absolute inset-0 opacity-5"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px)
-          `,
-          backgroundSize: "50px 50px",
-        }}
-      />
-
-      {/* Subtle glow effects - only animate after mount */}
-      <div
-        className="absolute left-1/4 top-1/4 h-96 w-96 rounded-full bg-blue-500/5 blur-3xl"
-        style={
-          mounted
-            ? {
-                animation: "pulse-slow 8s ease-in-out infinite",
-              }
-            : {}
-        }
-      />
-      <div
-        className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-purple-500/5 blur-3xl"
-        style={
-          mounted
-            ? {
-                animation: "pulse-slow 8s ease-in-out infinite",
-                animationDelay: "4s",
-              }
-            : {}
-        }
-      />
+      {/* Static glow effects - only animate after mount */}
+      {mounted && (
+        <>
+          <div
+            className="absolute left-1/4 top-1/4 h-96 w-96 rounded-full bg-blue-500/5 blur-3xl"
+            style={{
+              animation: "pulse-slow 8s ease-in-out infinite",
+            }}
+          />
+          <div
+            className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-purple-500/5 blur-3xl"
+            style={{
+              animation: "pulse-slow 8s ease-in-out infinite",
+              animationDelay: "4s",
+            }}
+          />
+        </>
+      )}
     </div>
   );
 }

@@ -27,7 +27,9 @@ export default function DsaOnlineResources() {
       ))}
 
       <h2>
-        <span className="text-white text-xl font-semibold">Coding Platforms</span>
+        <span className="text-xl font-semibold text-white">
+          Coding Platforms
+        </span>
       </h2>
       {codingPlatforms.map((category, idx) => (
         <motion.a

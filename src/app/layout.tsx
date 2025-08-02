@@ -5,13 +5,13 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { metaDataBase } from "@/data/metaData";
 import Navbar from "@/components/Navbar";
-import { Quicksand} from 'next/font/google';
+import { Quicksand } from "next/font/google";
 
 const quicksand = Quicksand({
-  weight: ['300', '400', '500', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  fallback: ['Arial', 'sans-serif']
+  weight: ["300", "400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  fallback: ["Arial", "sans-serif"],
 });
 
 export const metadata: Metadata = {

@@ -34,8 +34,8 @@ const team: {
 }[] = [
   {
     name: "Kanak Tanwar",
-    roles: ["Club Lead", "AI lead", "Dsa team"],
-    intro: "Can code in any language (if chatgpt is accessible)",
+    roles: ["Club Lead", "AI Lead", "DSA Team"],
+    intro: "Can code in any language (if ChatGPT is accessible).",
     urls: {
       github: "https://github.com/kanakOS01",
       linkedin: "https://www.linkedin.com/in/kanak-tanwar",
@@ -46,20 +46,20 @@ const team: {
   },
   {
     name: "Vivek Chahal",
-    roles: ["Co-lead", "IOS lead"],
-    intro: "Interested in technology which no one uses.",
+    roles: ["Co-Lead", "iOS Lead"],
+    intro: "Interested in technology that no one uses.",
     urls: {
       github: "https://github.com/Vivek09Chahal",
       linkedin: "https://www.linkedin.com/in/vivekchahal09/",
       twitter: "https://x.com/vivekchahal09",
     },
     image: Vivek,
-    keywords: ["ios", "web", "founder", "lead", "ios"],
+    keywords: ["ios", "web", "founder", "lead"],
   },
   {
     name: "Pulkit",
-    roles: ["Chairperson", "Web lead"],
-    intro: "Born to be CEO of Google, forced to be chairperson of Deviators",
+    roles: ["Chairperson", "Web Lead"],
+    intro: "Born to be CEO of Google, forced to be chairperson of Deviators.",
     urls: {
       github: "https://github.com/pulkitxm",
       linkedin: "https://www.linkedin.com/in/pulkit-dce",
@@ -71,8 +71,8 @@ const team: {
   },
   {
     name: "Krishna Kartikay Bhatt",
-    roles: ["Cyber Security Lead", "Event management"],
-    intro: "Likes to put computer aside and talk about national duty",
+    roles: ["Cyber Security Lead", "Event Management"],
+    intro: "Likes to put the computer aside and talk about national duty.",
     urls: {
       github: "https://github.com/kkbhatt07",
       linkedin: "https://www.linkedin.com/in/krishna-kartikay-bhatt/",
@@ -82,21 +82,21 @@ const team: {
   },
   {
     name: "Ayush Goyal",
-    roles: ["Event management Lead", "Team Coordinator", "Web Team"],
-    intro: "Recruiter and intern at same company",
-    image: Ayush,
+    roles: ["Event Management Lead", "Team Coordinator", "Web Team"],
+    intro: "Recruiter and intern at the same company.",
     urls: {
       github: "https://github.com/agayushh",
       linkedin: "https://www.linkedin.com/in/ayush-goyal-b4491324b",
-      twitter: "http://x.com/agayushh",
-      portfolio: "http://agayush.me/",
+      twitter: "https://x.com/agayushh",
+      portfolio: "https://agayush.me/",
     },
+    image: Ayush,
     keywords: ["event", "lead", "founder", "web"],
   },
   {
     name: "Deepika Anand",
-    roles: ["Women in Tech Lead", "Event management"],
-    intro: "Is a member of Dead Poets Society…until the alarm goes off.",
+    roles: ["Women in Tech Lead", "Event Management"],
+    intro: "Member of Dead Poets Society…until the alarm goes off.",
     urls: {
       github: "https://github.com/deepikaa0402",
       linkedin: "https://www.linkedin.com/in/deepika-anand-4a371a26b",
@@ -108,7 +108,7 @@ const team: {
     name: "Diksha Sharma",
     roles: ["UI/UX Lead", "Women in Tech"],
     intro:
-      "An engineering student by profession, a cat whisperer by obsesssion.",
+      "An engineering student by profession, a cat whisperer by obsession.",
     urls: {
       github: "https://github.com/diksha1504",
       linkedin: "https://www.linkedin.com/in/diksha-sharma-6b43a5213/",
@@ -129,7 +129,7 @@ const team: {
   },
   {
     name: "Vidushi Anand",
-    roles: ["AI team", "Women in Tech"],
+    roles: ["AI Team", "Women in Tech"],
     intro: "Pray for my delulus to come true.",
     urls: {
       github: "https://github.com/Vidushi2709",
@@ -141,8 +141,8 @@ const team: {
   },
   {
     name: "Manas Thakur",
-    roles: ["AI team"],
-    intro: "Prefer work over sleep and sleep over coffee",
+    roles: ["AI Team"],
+    intro: "Prefers work over sleep and sleep over coffee.",
     urls: {
       github: "https://github.com/Manas-thakur",
       linkedin: "https://www.linkedin.com/in/manasthakur30/",
@@ -156,7 +156,7 @@ const team: {
     roles: ["Social Media", "Web Team"],
     intro: "A unique fusion of dancer and coder.",
     urls: {
-      github: "https://www.github.com/kunalverma06",
+      github: "https://github.com/kunalverma06",
       linkedin: "https://www.linkedin.com/in/kunal-verma-528431291",
     },
     image: Kunal,
@@ -176,7 +176,7 @@ const team: {
   },
   {
     name: "Yash Kumar",
-    roles: ["DSA team", "Event management"],
+    roles: ["DSA Team", "Event Management"],
     intro: "Lost a staring competition with his dog once.",
     urls: {
       github: "https://github.com/Hero-Alpha",
@@ -187,8 +187,8 @@ const team: {
   },
   {
     name: "Saurabh Singh",
-    roles: ["DSA team"],
-    intro: "Call for DSA support...or if your car breaks down.",
+    roles: ["DSA Team"],
+    intro: "Call for DSA help... or if your car breaks down.",
     urls: {
       github: "https://github.com/sa1-1rabh",
       linkedin: "https://www.linkedin.com/in/sa1-1rabh",
@@ -198,20 +198,19 @@ const team: {
   },
   {
     name: "Dipti Chahar",
-    roles: ["DSA team", "Women in Tech"],
+    roles: ["DSA Team", "Women in Tech"],
     intro: "Smashes DSA problems and shuttles with equal flair.",
     urls: {
       github: "https://github.com/DiptiChahar",
-      linkedin: " https://www.linkedin.com/in/dipti-chahar-948a26247/",
+      linkedin: "https://www.linkedin.com/in/dipti-chahar-948a26247/",
     },
     image: Dipti,
     keywords: ["dsa", "women"],
   },
   {
     name: "Divyansh Sethi",
-    roles: ["DSA team", "Event management"],
-    intro:
-      "Lives in Choomantar Gali and has applied to get into Hogwarts 235 times.",
+    roles: ["DSA Team", "Event Management"],
+    intro: "Lives in Choomantar Gali and has applied to Hogwarts 235 times.",
     urls: {
       github: "https://github.com/coderizzz",
       linkedin: "https://www.linkedin.com/in/divyansh-sethi-035b7b25b",
@@ -222,28 +221,28 @@ const team: {
   {
     name: "Bhavya Kataria",
     roles: ["Social Media", "Designer", "Editor"],
-    intro: "Not on tinder, but you can find me on discord",
+    intro: "Not on Tinder, but you can find me on Discord.",
     urls: {
-      github: "https://www.github.com/damnbhavya",
+      github: "https://github.com/damnbhavya",
       linkedin: "https://www.linkedin.com/in/katariabhavya",
     },
     image: Bhavya,
-    keywords: ["social"],
+    keywords: ["social", "editor", "design"],
   },
   {
     name: "Aditya Yadav",
     roles: ["Editor"],
-    image: Aditya,
-    intro: "Can edit everything except your sessional scorecard",
+    intro: "Can edit everything except your sessional scorecard.",
     urls: {
       github: "https://github.com/ADIXD0001",
       linkedin: "https://www.linkedin.com/in/aditya-yadav-098850289",
     },
+    image: Aditya,
     keywords: ["editor"],
   },
 ];
 
 export default team.map((member) => ({
   ...member,
-  keywords: [...member.keywords, "club"],
+  keywords: Array.from(new Set([...member.keywords, "club"])),
 }));

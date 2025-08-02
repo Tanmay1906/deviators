@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { activities } from "@/data/heroSection";
-import AnimatedBackground from "@/components/HomePage/AnimatedBackground";
+import ClientBackground3D from "@/components/3D/ClientBackground3D";
 
 export default function HeroSection() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -20,8 +20,8 @@ export default function HeroSection() {
 
   return (
     <>
-      {/* Fallback Background */}
-      <AnimatedBackground />
+      {/* 3D Background */}
+      <ClientBackground3D />
 
       <section
         id="home"

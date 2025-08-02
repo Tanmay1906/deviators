@@ -57,10 +57,7 @@ export default function CyberRoadmap() {
                           </h4>
                           <ul className="grid gap-2">
                             {item.resources.map((resource, resIdx) => (
-                              <li
-                                key={resIdx}
-                                className="text-sm text-white"
-                              >
+                              <li key={resIdx} className="text-sm text-white">
                                 - {resource}
                               </li>
                             ))}

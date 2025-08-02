@@ -19,7 +19,7 @@ export default function Navigation() {
       setIsScrolled(window.scrollY > 10);
     };
 
-    // Only check scroll position after mount
+    // Set initial scroll state
     handleScroll();
 
     window.addEventListener("scroll", handleScroll);
@@ -28,7 +28,11 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ease-in-out ${mounted && (isScrolled || isMenuOpen) ? "bg-black/60 shadow-lg backdrop-blur-lg" : "bg-transparent"}`}
+      className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ease-in-out ${
+        mounted && (isScrolled || isMenuOpen)
+          ? "bg-black/60 shadow-lg backdrop-blur-lg"
+          : "bg-transparent"
+      }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between md:h-20">
@@ -38,11 +42,12 @@ export default function Navigation() {
               className="flex-shrink-0 transition-transform duration-300 ease-in-out hover:scale-105"
             >
               <Image
-                src={deviatorsLogoMin}
+                src={deviatorsLogoMin.src}
                 alt="Deviators Logo"
+                width={0}
+                height={0}
                 className="h-6 w-auto md:h-7"
-                width={28}
-                height={28}
+                style={{ width: "auto" }}
               />
             </Link>
           </div>

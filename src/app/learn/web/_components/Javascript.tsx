@@ -20,7 +20,7 @@ export default function Javacript() {
           <h2 className="text-lg font-semibold text-white md:text-xl">
             Learning Resources
           </h2>
-          </AccordionTrigger>
+        </AccordionTrigger>
         <AccordionContent>
           <ul className="space-y-4">
             {JavaScriptResources.resources.map((resource, index) => (
@@ -62,9 +62,9 @@ export default function Javacript() {
       <AccordionItem value="projects">
         <AccordionTrigger>
           <h2 className="text-lg font-semibold text-white md:text-xl">
-          Projects to Test Your Skills
+            Projects to Test Your Skills
           </h2>
-          </AccordionTrigger>
+        </AccordionTrigger>
         <AccordionContent>
           <motion.ol className="space-y-4">
             {JavaScriptResources.projects.map((project, index) => (

@@ -1,4 +1,16 @@
-import * as THREE from "three";
+// Dynamic THREE import to prevent SSR issues
+let THREE: typeof import("three") | null = null;
+
+// Dynamically import THREE only on client side
+if (typeof window !== "undefined") {
+  import("three")
+    .then((module) => {
+      THREE = module;
+    })
+    .catch((error) => {
+      console.warn("Failed to load THREE.js:", error);
+    });
+}
 
 export const PERFORMANCE_CONFIG = {
   // Canvas settings
@@ -9,7 +21,10 @@ export const PERFORMANCE_CONFIG = {
 
   // Render settings
   shadowMap: false,
-  toneMapping: THREE.ACESFilmicToneMapping,
+  get toneMapping() {
+    // Safely return toneMapping value
+    return THREE?.ACESFilmicToneMapping ?? 5;
+  },
   toneMappingExposure: 1.2,
 
   // Animation settings

@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   Card,
   CardContent,
@@ -75,10 +76,11 @@ export default function LearnPage() {
                   <CardHeader className="p-6">
                     <div className="flex items-center gap-4">
                       <div className="relative h-12 w-12 rounded-lg bg-[#0047AB]/30 p-2 transition-transform duration-300 hover:scale-110">
-                        <img
-                          src={track.image.src}
+                        <Image
+                          src={track.image}
                           alt={`${track.name} icon`}
                           className="h-full w-full object-contain p-1"
+                          fill
                         />
                       </div>
                       <CardTitle

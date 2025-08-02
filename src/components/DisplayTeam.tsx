@@ -1,5 +1,6 @@
 import { getTeam } from "@/lib/team";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function DisplayTeam({ keyword }: { keyword: string }) {
@@ -21,12 +22,14 @@ export default function DisplayTeam({ keyword }: { keyword: string }) {
             rel="noopener noreferrer"
             className="flex max-w-32 transform flex-col items-center justify-center text-balance transition-all duration-300 hover:scale-105"
           >
-            <img
+            <Image
               src={member.image.src}
               alt={member.name}
+              width={80}
+              height={80}
               className="h-20 w-20 rounded-full object-cover transition-all duration-300 group-hover:shadow-lg group-hover:shadow-[#0047AB]/50"
             />
-            <p className="mt-2 text-white transition-colors duration-300 group-hover:text-[#99c3ff]/300">
+            <p className="group-hover:text-[#99c3ff]/300 mt-2 text-white transition-colors duration-300">
               {member.name}
             </p>
           </Link>
